@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Corretor Brasil - Marketplace de Corretores de Imóveis</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="assets/icon-192.png">
+<meta name="theme-color" content="#87CEEB"/>
+<link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand" style="display:flex;align-items:center">
+      <img src="assets/logo.png" alt="Corretor Brasil">
+      <div style="margin-left:8px"><h1>Corretor Brasil</h1><div class="lead">O marketplace para corretores de imóveis de todo o Brasil.</div></div>
+    </div>
+  </header>
+
+  <nav class="tabbar" id="tabbar" role="tablist" aria-label="Categorias"></nav>
+
+  <main class="container" role="main">
+    <div class="controls" style="display:flex;align-items:center">
+      <input id="search" placeholder="Pesquisar empreendimento..." style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.08)">
+      <div style="margin-left:12px">Selecionados: <strong id="selectedCount">0</strong></div>
+    </div>
+    <section id="cards" aria-live="polite"></section>
+    <div style="margin-top:12px"><button class="btn" id="btn-apply">Candidatar-se aos selecionados</button></div>
+    <div id="plano" style="margin-top:18px;display:none">
+      <h3>Planos</h3>
+      <p>Mensal: R$ 19,90 • Anual: R$ 199,99</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div id="main-credits"></div>
+  </footer>
+
+<script src="scripts/app.js"></script>
+<script>
+if ('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/service-worker.js').catch(()=>console.warn('sw failed'));
+}
+</script>
+</body>
+</html>
